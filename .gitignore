@@ -1,0 +1,4 @@
+build/
+*.o
+maze_solver
+maze_solver.exe
