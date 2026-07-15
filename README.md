@@ -1,5 +1,4 @@
-# MazeSolver
-# THE MAZE SOLVER
+# THE MAZESOLVER
 ## Documentación General del Proyecto
 
 | Atributo | Detalle |
