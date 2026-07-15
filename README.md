@@ -4,52 +4,52 @@
 
 | Atributo | Detalle |
 | :--- | :--- |
-| **Asignatura** | Estructuras de Datos y Algoritmos[cite: 1] |
-| **Área** | Área 2 — Desarrollo de Juegos y Simulaciones[cite: 1] |
-| **Tipo** | Juego de laberintos en consola (C, estándar C11)[cite: 1] |
-| **Versión** | 2.0 — Con grafo de conectividad + modo IA[cite: 1] |
+| **Asignatura** | Estructuras de Datos y Algoritmos |
+| **Área** | Área 2 — Desarrollo de Juegos y Simulaciones |
+| **Tipo** | Juego de laberintos en consola (C, estándar C11)|
+| **Versión** | 2.0 — Con grafo de conectividad + modo IA |
 
 ---
 
-## 1. ¿Qué es The Maze Solver?[cite: 1]
-The Maze Solver es un juego de laberintos en consola escrito en C[cite: 1]. El programa genera automáticamente un laberinto nuevo en cada partida y le propone al jugador encontrar la salida[cite: 1]. También incluye un modo automático donde la inteligencia artificial resuelve el laberinto por su cuenta, mostrando el recorrido en tiempo real[cite: 1].
+## 1. ¿Qué es The Maze Solver?
+The Maze Solver es un juego de laberintos en consola escrito en C. El programa genera automáticamente un laberinto nuevo en cada partida y le propone al jugador encontrar la salida[cite: 1]. También incluye un modo automático donde la inteligencia artificial resuelve el laberinto por su cuenta, mostrando el recorrido en tiempo real.
 
-**Nota:** Cada laberinto es único: se genera procedimentalmente mediante el algoritmo DFS en cada ejecución, garantizando que siempre existe exactamente un camino entre cualquier par de celdas[cite: 1].
+**Nota:** Cada laberinto es único: se genera procedimentalmente mediante el algoritmo DFS en cada ejecución, garantizando que siempre existe exactamente un camino entre cualquier par de celdas.
 
 ---
 
-## 2. ¿Cómo se juega?[cite: 1]
+## 2. ¿Cómo se juega?
 
-### 2.1 Inicio y configuración[cite: 1]
-Al ejecutar el programa se muestra el menú principal con cinco opciones:[cite: 1]
+### 2.1 Inicio y configuración
+Al ejecutar el programa se muestra el menú principal con cinco opciones:
 
 | Opción | Descripción |
 | :--- | :--- |
-| **1 — Jugar** | Modo humano: el jugador controla el personaje hasta llegar a la salida.[cite: 1] |
-| **2 — Modo IA** | La IA resuelve el laberinto automáticamente usando BFS y lo anima en pantalla.[cite: 1] |
-| **3 — Personalizar** | Cambia los símbolos de pared, suelo, meta, rastro y ruta sugerida.[cite: 1] |
-| **4 — Personaje** | Elige el símbolo que representa al jugador (@, P, X, O, &).[cite: 1] |
-| **5 — Salir** | Termina el programa.[cite: 1] |
+| **1 — Jugar** | Modo humano: el jugador controla el personaje hasta llegar a la salida.|
+| **2 — Modo IA** | La IA resuelve el laberinto automáticamente usando BFS y lo anima en pantalla.|
+| **3 — Personalizar** | Cambia los símbolos de pared, suelo, meta, rastro y ruta sugerida. |
+| **4 — Personaje** | Elige el símbolo que representa al jugador (@, P, X, O, &). |
+| **5 — Salir** | Termina el programa. |
 
-### 2.2 Controles durante el juego[cite: 1]
+### 2.2 Controles durante el juego
 | Tecla | Acción |
 | :--- | :--- |
-| **W / ↑** | Mover hacia arriba[cite: 1] |
-| **S / ↓** | Mover hacia abajo[cite: 1] |
-| **A / ←** | Mover hacia la izquierda[cite: 1] |
-| **D / →** | Mover hacia la derecha[cite: 1] |
-| **H** | Mostrar / ocultar la ruta más corta hasta la salida (calculada con BFS)[cite: 1] |
-| **Q** | Salir al menú principal[cite: 1] |
+| **W / ↑** | Mover hacia arriba |
+| **S / ↓** | Mover hacia abajo |
+| **A / ←** | Mover hacia la izquierda |
+| **D / →** | Mover hacia la derecha |
+| **H** | Mostrar / ocultar la ruta más corta hasta la salida (calculada con BFS)|
+| **Q** | Salir al menú principal |
 
-### 2.3 Pantalla de juego[cite: 1]
+### 2.3 Pantalla de juego
 | Símbolo | Significado |
 | :--- | :--- |
-| **#** | Pared (no se puede atravesar)[cite: 1] |
-| **[Espacio]** | Suelo transitable[cite: 1] |
-| **E** | Meta / salida del laberinto[cite: 1] |
+| **#** | Pared (no se puede atravesar)|
+| **[Espacio]** | Suelo transitable |
+| **E** | Meta / salida del laberinto|
 | **.** | Rastro del jugador (últimas 20 posiciones)[cite: 1] |
 | **\*** | Ruta sugerida por BFS (se activa con H)[cite: 1] |
-| **@ / P / X…** | Posición actual del jugador[cite: 1] |
+| **@ / P / X…** | Posición actual del jugador
 
 ### 2.4 Dificultades disponibles[cite: 1]
 | Dificultad | Tamaño del laberinto | Celdas aprox. |
