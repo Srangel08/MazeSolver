@@ -1,7 +1,7 @@
 # The MazeSolver
 ## Documentación general del proyecto
 
-## 1. ¿Qué es The Maze Solver?
+## 1. ¿Qué es The MazeSolver?
 The Maze Solver es un juego de laberintos en consola escrito en C. El programa genera automáticamente un laberinto nuevo en cada partida y le propone al jugador encontrar la salida. También incluye un modo automático donde la inteligencia artificial resuelve el laberinto por su cuenta, mostrando el recorrido en tiempo real.
 
 **Nota:** Cada laberinto es único: se genera procedimentalmente mediante el algoritmo DFS en cada ejecución, garantizando que siempre existe exactamente un camino entre cualquier par de celdas.
