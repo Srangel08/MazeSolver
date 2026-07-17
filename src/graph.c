@@ -1,3 +1,8 @@
+// ============================================================
+// graph.c
+// Implementacion del grafo con lista de adyacencia.
+// ============================================================
+
 #include "graph.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -8,13 +13,14 @@ Grafo* crear_grafo(int num_vertices, int ancho, int alto) {
 
     g->num_vertices = num_vertices;
     g->ancho = ancho;
-    g->alto = alto;
+    g->alto  = alto;
 
-    g->lista = calloc(num_vertices, sizeof(NodoAdyecencia*));
+    g->lista = calloc(num_vertices, sizeof(NodoAdyacencia*));
     if (!g->lista) {
         free(g);
         return NULL;
     }
+    // calloc garantiza que todos los punteros arrancan en NULL
     return g;
 }
 

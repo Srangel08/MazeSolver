@@ -34,14 +34,16 @@ void inicializar_apariencia(Apariencia* ap) {
 }
 
 void limpiar_pantalla(void) {
+    // Usamos la secuencia ANSI más potente y limpia para terminales modernas (VS Code, PowerShell, Bash)
+    // \033[H mueve el cursor arriba a la izquierda y \033[J borra la pantalla desde ahí
+    printf("\033[H\033[J");
+    
 #ifdef _WIN32
-    // En Windows, system("cls") es lo más limpio para CMD/PowerShell
-    system("cls");
-#else
-    // En Linux/macOS, las secuencias ANSI van perfecto
-    printf("\033[2J\033[H");
+    // Si estás en una consola clásica de Windows (CMD) donde ANSI pueda fallar, esto asegura el borrado
+    // Comentado o activo según prefieras, pero la secuencia ANSI de arriba suele bastar en VS Code.
+    // system("cls"); 
 #endif
-    // Fuerza a la consola a procesar la limpieza inmediatamente
+
     fflush(stdout);
 }
 
@@ -100,7 +102,6 @@ int leer_tecla(void) {
 #endif
 }
 
-// ---- Menu principal --------------------------------------------
 int mostrar_menu_principal(void) {
     limpiar_pantalla();
     printf("==========================================\n");
@@ -197,7 +198,6 @@ void renderizar(Laberinto* lab, Jugador* jug, Camino* ruta_sug, Apariencia* ap) 
             char c;
             const char* color;
 
-            // PRIORIDAD 1: Si es la coordenada del jugador, se dibuja SÍ O SÍ
             if (x == jug->x && y == jug->y) {
                 c     = jug->simbolo;
                 color = COLOR_JUGADOR;
@@ -232,7 +232,6 @@ void renderizar(Laberinto* lab, Jugador* jug, Camino* ruta_sug, Apariencia* ap) 
         }
         printf("%s\n", COLOR_RESET);
     }
-    // Asegura que todo el mapa se dibuje en pantalla al mismo milisegundo
     fflush(stdout);
 }
 

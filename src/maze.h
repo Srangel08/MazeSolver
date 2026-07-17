@@ -1,3 +1,13 @@
+// ============================================================
+// maze.h
+// Interfaz para la generacion del laberinto y busqueda de rutas.
+// El laberinto usa DOS estructuras complementarias:
+//   - cuadricula char**  : representacion visual (matriz 2D)
+//   - Grafo*             : conectividad real entre celdas transitables
+// DFS opera sobre el Grafo para generar el laberinto perfecto.
+// BFS opera sobre el Grafo para encontrar la ruta minima.
+// ============================================================
+
 #ifndef MAZE_H
 #define MAZE_H
 
