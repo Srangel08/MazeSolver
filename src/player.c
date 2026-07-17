@@ -1,6 +1,6 @@
 // ============================================================
 // player.c
-// Implementacion del jugador y la mecanica de rastro limitado.
+// Implementacion del jugador
 // El rastro se implementa con un buffer circular de capacidad fija.
 // ============================================================
 
@@ -32,24 +32,23 @@ int mover_jugador(Jugador* jug, Laberinto* lab, int dx, int dy) {
     int nx = jug->x + dx;
     int ny = jug->y + dy;
 
-    // Limites del laberinto
+  
     if (nx < 0 || nx >= lab->ancho || ny < 0 || ny >= lab->alto) return -1;
     // Colision con pared
     if (lab->cuadricula[ny][nx] == '#') return -1;
 
-    // Guardar posicion actual en el buffer circular antes de movernos
+   
     if (jug->cantidad < jug->capacidad) {
         jug->buffer_rastro[jug->fin] = (Punto){jug->x, jug->y};
         jug->fin = (jug->fin + 1) % jug->capacidad;
         jug->cantidad++;
     } else {
-        // Buffer lleno: sobreescribimos usando 'fin' y desplazamos ambos indices
-        jug->buffer_rastro[jug->fin] = (Punto){jug->x, jug->y};
+       
+        jug->buffer_rastro[jug->inicio] = (Punto){jug->x, jug->y};
         jug->inicio = (jug->inicio + 1) % jug->capacidad;
-        jug->fin    = (jug->fin + 1) % jug->capacidad;
+        jug->fin    = (jug->fin    + 1) % jug->capacidad;
     }
 
-    // Actualizar posicion del jugador
     jug->x = nx;
     jug->y = ny;
     jug->pasos_dados++;

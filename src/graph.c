@@ -20,19 +20,18 @@ Grafo* crear_grafo(int num_vertices, int ancho, int alto) {
         free(g);
         return NULL;
     }
-    // calloc garantiza que todos los punteros arrancan en NULL
     return g;
 }
 
 void agregar_arista(Grafo* g, int u, int v) {
-    // Arista u -> v
+  
     NodoAdyacencia* nodo_uv = malloc(sizeof(NodoAdyacencia));
     if (!nodo_uv) return;
     nodo_uv->vertice   = v;
     nodo_uv->siguiente = g->lista[u];
     g->lista[u] = nodo_uv;
 
-    // Arista v -> u  (grafo no dirigido)
+
     NodoAdyacencia* nodo_vu = malloc(sizeof(NodoAdyacencia));
     if (!nodo_vu) return;
     nodo_vu->vertice   = u;
